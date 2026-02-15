@@ -399,6 +399,79 @@ body {
 }
 
 
+/* Contact Form Container */
+.contact-form-container {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.styled-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+.styled-form label {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Input & Textarea Styling */
+.styled-form input[type="text"],
+.styled-form input[type="email"],
+.styled-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus States (Blue highlight when clicking) */
+.styled-form input:focus,
+.styled-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: auto;
+}
+
+.submit-button:hover {
+    background-color: var(--accent-blue);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .contact-form-container {
+        padding: 20px;
+    }
+    .submit-button {
+        width: 100%; /* Full width button on mobile for easier tapping */
+    }
+}
+
 
 /* Footer */
 footer {
