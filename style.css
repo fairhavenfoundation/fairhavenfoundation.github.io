@@ -1,0 +1,443 @@
+:root {
+    --primary-blue: #003366;    /* The dark navy from the original site */
+    --accent-blue: #0066cc;     /* The royal blue for buttons/links */
+    --white: #ffffff;
+}
+
+/* General Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Nav */
+.navbar {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.logo a {
+	text-decoration: none;
+}
+
+.logo span {
+    color: #3498db;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* Hero Section */
+.hero {
+    background: radial-gradient(
+        circle, 
+        rgba(0, 51, 102, 0.5) 0%,  /* Almost clear in the middle */
+        rgba(0, 38, 77, 0.8) 100% /* Darker at the edges */
+    ), 
+                url('images/fairhaven.png') center/cover;
+
+   /* background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                url('fh2.png') center/cover;*/
+    color: white;
+    padding: 200px 0;
+    text-align: center;
+	border-bottom: 4px solid var(--accent-blue); /* Adds a nice pop of the lighter blue */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+	
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    margin-right: 10px;
+}
+
+/* Main Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.main-text h2 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.main-text p {
+    margin-bottom: 10px;
+}
+
+.main-text ul {
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    list-style-type: disc;
+}
+
+.main-text li {
+    padding-left: 5px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+}
+
+
+/* Directors Section */
+.directors-section {
+    padding: 40px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.directors-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.section-subtitle {
+    max-width: 600px;    /* Limits the width so it breaks naturally */
+    margin: 0 auto 40px; /* '0 auto' centers the block; '40px' adds space below */
+    color: #666;
+    font-style: italic;
+    line-height: 1.6;    /* Adds a bit of breathing room between lines */
+}
+
+.section-subtitle a {
+	text-decoration: none;
+}
+
+/* Responsive Grid Layout */
+.directors-grid {
+    display: grid;
+    /* This creates columns that are at least 200px wide, but fill the space */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.director-card {
+    background-color: #f9f9f9;
+    padding: 30px 20px;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid var(--accent-blue); /* Subtle nod to site colors */
+    transition: transform 0.2s ease;
+}
+
+.director-card:hover {
+    transform: translateY(-5px); /* Adds a modern hover effect */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.director-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.role {
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Container for the 6 members */
+.directors-grid {
+    display: grid;
+    /* Forces 3 equal columns on desktop */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.director-card {
+    background-color: #f9f9f9;
+    padding: 35px 20px;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid var(--accent-blue);
+    text-align: center;
+}
+
+/* Responsiveness: Adjust for Tablets and Phones */
+@media (max-width: 900px) {
+    .directors-grid {
+        /* On tablets, switch to 2 columns */
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .directors-grid {
+        /* On phones, switch to 1 column */
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Newsletter Specific Styles */
+.newsletter-archive-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.newsletter-archive-item h3 a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.newsletter-archive-item h3 a:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+}
+
+.article-list {
+    margin: 10px 0 0 25px; /* Indented for readability */
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.article-list li {
+    margin-bottom: 5px;
+}
+
+.pdf-download-link {
+    color: #c0392b; /* Traditional PDF Red */
+    font-size: 2.5rem;
+    padding-left: 20px;
+    transition: transform 0.2s ease;
+}
+
+.pdf-download-link:hover {
+    transform: scale(1.1);
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 40px 0;
+}
+
+/* Sidebar Donation Styling */
+.donation-card address {
+    font-style: normal;
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .newsletter-archive-item {
+        flex-direction: column-reverse; /* Put icon below text on mobile for better flow */
+    }
+    .pdf-download-link {
+        padding-left: 0;
+        margin-bottom: 15px;
+        font-size: 2rem;
+    }
+}
+
+
+/* Guidelines Highlight Box */
+.guidelines-card {
+    background-color: #f8faff;
+    border-left: 5px solid var(--accent-blue);
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+.guidelines-card h3 {
+    margin-top: 0;
+    color: var(--primary-blue);
+}
+
+.guidelines-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guidelines-card li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.guidelines-card li::before {
+    content: "•";
+    color: var(--accent-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Contact Info Highlight */
+.contact-highlight {
+    background: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.contact-highlight h4 {
+    margin-top: 0;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.button-link {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--primary-blue);
+    color: white !important;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.button-link:hover {
+    background: var(--accent-blue);
+}
+
+
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 40px;
+    }
+
+    .btn-secondary {
+        margin-right: 0;
+    }
+}
