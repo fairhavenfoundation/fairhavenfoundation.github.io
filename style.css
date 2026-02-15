@@ -462,6 +462,56 @@ body {
     background-color: var(--accent-blue);
 }
 
+/* Base style for both feedback boxes */
+.form-feedback {
+    display: flex; /* Aligns icon next to text */
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.form-feedback i {
+    font-size: 1.5rem;
+    margin-top: 2px;
+}
+
+.form-feedback strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+
+.form-feedback p {
+    margin: 0;
+    color: inherit;
+}
+
+/* Success State - Green Palette */
+.success-message {
+    background-color: #f0fff4;
+    border: 1px solid #c6f6d5;
+    color: #276749;
+}
+
+.success-message i {
+    color: #38a169;
+}
+
+/* Error State - Red Palette */
+.error-message {
+    background-color: #fff5f5;
+    border: 1px solid #fed7d7;
+    color: #9b2c2c;
+}
+
+.error-message i {
+    color: #e53e3e;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     .contact-form-container {
