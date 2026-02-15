@@ -409,6 +409,15 @@ body {
     margin-top: 20px;
 }
 
+.form-instruction {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
 .styled-form .form-group {
     margin-bottom: 20px;
 }
