@@ -200,23 +200,31 @@ body {
 }
 
 /* Responsive Grid Layout */
+/* Container for the Board Members */
 .directors-grid {
-    display: grid;
-    /* This creates columns that are at least 200px wide, but fill the space */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This is the "magic" that centers the 7th card */
+    gap: 30px;
+    margin-top: 20px;
 }
 
+/* Individual Card Styling */
 .director-card {
     background-color: #f9f9f9;
-    padding: 30px 20px;
+    padding: 35px 20px;
     border: 1px solid #e0e0e0;
-    border-top: 4px solid var(--accent-blue); /* Subtle nod to site colors */
-    transition: transform 0.2s ease;
+    border-top: 4px solid var(--accent-blue);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    /* On Desktop: 3 columns (Total 100% / 3 minus gap adjustment) */
+    flex: 0 1 calc(33.333% - 20px); 
+    min-width: 250px; /* Ensures cards don't get too thin */
 }
 
 .director-card:hover {
-    transform: translateY(-5px); /* Adds a modern hover effect */
+    transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
@@ -233,35 +241,19 @@ body {
     text-transform: uppercase;
 }
 
-/* Container for the 6 members */
-.directors-grid {
-    display: grid;
-    /* Forces 3 equal columns on desktop */
-    grid-template-columns: 1fr 1fr 1fr; 
-    gap: 30px;
-    margin-top: 20px;
-}
+/* --- Responsiveness --- */
 
-.director-card {
-    background-color: #f9f9f9;
-    padding: 35px 20px;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid var(--accent-blue);
-    text-align: center;
-}
-
-/* Responsiveness: Adjust for Tablets and Phones */
+/* Tablets: 2 columns */
 @media (max-width: 900px) {
-    .directors-grid {
-        /* On tablets, switch to 2 columns */
-        grid-template-columns: 1fr 1fr;
+    .director-card {
+        flex: 0 1 calc(50% - 15px);
     }
 }
 
+/* Phones: 1 column */
 @media (max-width: 600px) {
-    .directors-grid {
-        /* On phones, switch to 1 column */
-        grid-template-columns: 1fr;
+    .director-card {
+        flex: 1 1 100%; /* Take full width */
     }
 }
 
