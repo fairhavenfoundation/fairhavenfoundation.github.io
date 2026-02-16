@@ -421,6 +421,9 @@ body {
 .styled-form .form-group {
     margin-bottom: 20px;
 }
+.styled-form .form-hp {
+    display: none;
+}
 
 /* Label Styling */
 .styled-form label {
