@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Found - Redirecting</title>
+    <script>
+        // Get the current URL path (e.g., /terms.php)
+        var path = window.location.pathname;
+
+        // If the path ends in .php, swap it to .html and redirect
+        if (path.endsWith('.php')) {
+            var newPath = path.replace('.php', '.html');
+            window.location.replace(newPath);
+        } else {
+            // Otherwise, send them to the homepage or show a real 404 message
+            document.write('<h1>404 Not Found</h1><p>Returning to <a href="/">homepage</a>...</p>');
+            setTimeout(function() { window.location.replace("/"); }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting to the new page structure...</p>
+</body>
+</html>
