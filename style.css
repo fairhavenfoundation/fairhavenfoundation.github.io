@@ -548,15 +548,43 @@ footer {
 
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-        gap: 15px;
+	.navbar {
+        padding: 10px 0; /* Reduced from 20px to save 20px of height */
     }
 
-    .nav-links {
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px; /* Reduced gap between logo and links */
+    }
+
+    .logo {
+        font-size: 1.1rem; /* Scaled down from 1.5rem */
+        text-align: center;
+    }
+
+    /* Prevents the logo image from forcing the header to be too tall */
+    .logo img {
+        height: 25px; 
+        width: auto;
+        vertical-align: middle;
+    }
+
+    /* Force the long "Charitable Foundation" span to a new line or hide it */
+    .logo span {
+        display: block; 
+        font-size: 0.8rem;
+        margin-top: -5px;
+    }
+
+	.nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        font-size: 0.9rem;
+        gap: 12px; /* Tightened link spacing */
+        font-size: 0.85rem;
+    }
+
+    .nav-links a.btn-primary {
+        padding: 8px 15px; /* Smaller button footprint */
     }
 
     .hero h1 {
