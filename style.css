@@ -72,6 +72,16 @@ body {
     color: #3498db;
 }
 
+.nav-links a.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.nav-links a.btn-primary:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
 /* Hero Section */
 .hero {
     background: radial-gradient(
